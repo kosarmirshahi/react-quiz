@@ -1,9 +1,10 @@
 import React from "react";
-import StarterPage from "./components/StarterPage/StarterPage";
+import Question from "./components/Question/Question";
+// import StarterPage from "./components/StarterPage/StarterPage";
 function App() {
   return (
     <div>
-      <StarterPage />
+      <Question />
     </div>
   );
 }
