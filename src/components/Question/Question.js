@@ -1,13 +1,11 @@
 import React from "react";
 import Option from "../Options/Option";
-// import Option from "";
-function Question() {
+function Question({ question, dispatch, answer }) {
+  // console.log(question);
   return (
-    <div className="w-2/4 m-auto mt-32 bg-[#F3ECF5] p-10 rounded-lg shadow-xl">
-      <p className="mb-5">Question 1 of 15</p>
-      <p className="text-4xl mb-7">what is react and js?</p>
-      <Option />
-      <button className="bg-[#E581FE] w-36 h-12 font-bold rounded">Next</button>
+    <div className="w-2/5 m-auto mt-32 bg-[#F3ECF5] p-10 rounded-lg shadow-xl">
+      <p className="text-4xl mb-7">{question.question}</p>
+      <Option question={question} dispatch={dispatch} answer={answer} />
     </div>
   );
 }

@@ -1,11 +1,25 @@
 import React from "react";
-function Option() {
+function Option({ question, dispatch, answer }) {
+  // console.log(question);
+  const hasAnswered = answer !== null;
   return (
     <div className="mb-9 ml-7 text-1xl">
-      <ul className="mb-2 w-1/5">abc</ul>
-      <ul className="mb-2 w-1/5">efg</ul>
-      <ul className="mb-2 w-1/5">hig</ul>
-      <ul className="mb-2 w-1/5">klmn</ul>
+      {question.options.map((option, index) => (
+        <ul
+          className={`mb-3 cursor-pointer ${index === answer ? "answer" : ""}
+          ${
+            hasAnswered
+              ? index === question.correctOption
+                ? "bg-lime-300"
+                : "bg-red-400"
+              : ""
+          }`}
+          key={option}
+          onClick={() => dispatch({ type: "newAnswer", payload: index })}
+        >
+          {option}
+        </ul>
+      ))}
     </div>
   );
 }
