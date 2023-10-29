@@ -10,8 +10,8 @@ function Option({ question, dispatch, answer }) {
           ${
             hasAnswered
               ? index === question.correctOption
-                ? "bg-lime-300"
-                : "bg-red-400"
+                ? ""
+                : "line-through"
               : ""
           }`}
           key={option}
